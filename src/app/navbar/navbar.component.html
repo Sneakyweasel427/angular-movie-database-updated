@@ -1,5 +1,7 @@
 <nav>
-  <button routerLink="movies/add" *ngIf="!router.url.includes('movies/add')">
-    Add
-  </button>
+  @if (!router.url.includes('movies/add')) {
+    <button routerLink="movies/add">
+      Add
+    </button>
+  }
 </nav>
