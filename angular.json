@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-movie-database:build"
+            "buildTarget": "angular-movie-database:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-movie-database:build:production"
+              "buildTarget": "angular-movie-database:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-movie-database:build"
+            "buildTarget": "angular-movie-database:build"
           }
         },
         "test": {
@@ -114,5 +114,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
