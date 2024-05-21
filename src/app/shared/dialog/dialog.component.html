@@ -1,0 +1,79 @@
+<div class="dialog-content-wrapper ">
+  @if(data.header || data.subHeader) {
+    <div class="bg-primary-100 border-bottom rounded-top  border-primary-600 d-flex" mat-dialog-title>
+      <div>
+        <h2 class="fs-16 lh-18 text-black font-400 mb-0"> {{data.header}}</h2>
+        <span class="d-block m-0 fs-14 lh-18 text-grey-1000 font-400">{{data.subHeader}}</span>
+      </div>
+      @if(!data.disableCloseBtn) {
+        <button mat-icon-button tabindex="-1" class="close" (click)="onCancel()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      }
+    </div>
+  }
+
+  <mat-dialog-content class="position-relative">
+
+    @if(isTemplateRef) {
+      <ng-container *ngTemplateOutlet="data.content"></ng-container>
+    }
+
+    @if(!isTemplateRef) {
+      <p [innerHTML]="data.content"></p>
+    }
+
+    @if(data.inputs) {
+      <form [formGroup]="form">
+        @for(input of data.inputs; track input) {
+          @if(input.type === undefined || input.type === 'text') {
+            <mat-form-field class="w-100">
+              <input matInput [id]="input.id" [formControlName]="input.name" [placeholder]="input.placeholder">
+              <!--            <app-form-control-error [control]="form.get(input.name)" [controlFriendlyName]="input.name" matSuffix></app-form-control-error>-->
+            </mat-form-field>
+          }
+
+          @if(input.type === 'number') {
+            <mat-form-field class="w-100">
+              <input matInput [id]="input.id" [formControlName]="input.name" [placeholder]="input.placeholder" type="number">
+              <!--            <app-form-control-error [control]="form.get(input.name)" [controlFriendlyName]="input.name" matSuffix></app-form-control-error>-->
+            </mat-form-field>
+          }
+
+          @if(input.type === 'select') {
+            <mat-form-field class="w-100">
+              <mat-select [id]="input.id" [formControlName]="input.name" [placeholder]="input.placeholder">
+                @if (!(input.name | map:isRequiredInput.bind(this))) {
+                  <mat-option>None</mat-option>
+                }
+                @for(option of input.options; track option) {
+                  <mat-option [value]="option.value">{{ option.label }}</mat-option>
+                }
+              </mat-select>
+              <!--            <app-form-control-error [control]="form.get(input.name)" [controlFriendlyName]="input.name" matSuffix></app-form-control-error>-->
+            </mat-form-field>
+          }
+
+          <!--          <mat-form-field *ngIf="input.type === 'date'" class="w-100">-->
+            <!--            <input matInput [id]="input.id" [formControlName]="input.name" [placeholder]="input.placeholder" [matDatepicker]="matDatePicker">-->
+            <!--            <mat-datepicker-toggle matSuffix [for]="matDatePicker"></mat-datepicker-toggle>-->
+            <!--            <mat-datepicker #matDatePicker></mat-datepicker>-->
+            <!--            <app-form-control-error [control]="form.get(input.name)" [controlFriendlyName]="input.name" matSuffix></app-form-control-error>-->
+            <!--          </mat-form-field>-->
+
+        }
+      </form>
+    }
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <div class="container">
+      <div class="row">
+        @for(button of data.buttons; track button) {
+          <button mat-flat-button [class]="button.cssClass" class="col" [color]="button.color"
+                  [disabled]="button.disabled" (click)="onButtonClick(button)">{{ button.text }}</button>
+        }
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

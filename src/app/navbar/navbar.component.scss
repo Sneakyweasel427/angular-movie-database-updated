@@ -1,6 +1,10 @@
+@use '@angular/material' as mat;
+@import '../../styles.scss';
+
 nav {
-  background: linear-gradient(to right, #f27121, #e94057);
-  padding: 10px;
+  //background: linear-gradient(to right, #f27121, #e94057);
+  background: mat.get-color-from-palette($my-primary, 900);
+  padding: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -13,19 +17,19 @@ h1 {
 
 button {
   border: 0;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
+  background: mat.get-color-from-palette($my-accent, 50);
   font-size: 18px;
-  color: white;
+  color: #000000;
   margin-right: 14px;
   height: 40px;
   width: 100px;
   box-shadow: 5px 5px 0 black;
   border-radius: 10px;
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  //transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   &:hover {
-    border-radius: 0;
-    background: black;
-    box-shadow: 5px 5px 0 #48dbfb;
-    transform: translate(-2px) scale(1.1);
+    //border-radius: 0;
+    background: mat.get-color-from-palette($my-primary, 100);
+    box-shadow: 1px 1px 0 mat.get-color-from-palette($my-primary, 200);
+    //transform: translate(-2px) scale(1.1);
   }
 }

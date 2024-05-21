@@ -8,38 +8,10 @@
       "releaseYear": "2018"
     },
     {
-      "id": 2,
-      "name": "Area X: Annihilation",
-      "genre": "Adventure",
-      "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2Mjc2NzYxNl5BMl5BanBnXkFtZTgwMTA2OTA1NDM@._V1_SY500_CR0,0,320,500_AL_.jpg",
-      "releaseYear": "2018"
-    },
-    {
-      "id": 3,
-      "name": "Hannah",
-      "genre": "Drama",
-      "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BNWJmMWIxMjQtZTk0Mi00YTE0LTkyNzAtYzQxYjcwYjE4ZDk2XkEyXkFqcGdeQXVyMTc4MzI2NQ@@._V1_SY500_SX350_AL_.jpg",
-      "releaseYear": "2018"
-    },
-    {
-      "id": 4,
-      "name": "The Lodgers",
-      "genre": "Drama",
-      "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BM2FhM2E1MTktMDYwZi00ODA1LWI0YTYtN2NjZjM3ODFjYmU5XkEyXkFqcGdeQXVyMjY1ODQ3NTA@._V1_SY500_CR0,0,337,500_AL_.jpg",
-      "releaseYear": "2018"
-    },
-    {
       "id": 5,
       "name": "Beast of Burden",
       "genre": "Action",
       "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyNTM3MDQ2NV5BMl5BanBnXkFtZTgwMDI5Nzk1NDM@._V1_SY500_CR0,0,336,500_AL_.jpg",
-      "releaseYear": "2018"
-    },
-    {
-      "id": 6,
-      "name": "The Chamber",
-      "genre": "Horror",
-      "image": "https://images-na.ssl-images-amazon.com/images/M/MV5BNTVlODgwMjgtZGUzMy00ZTY1LWIyMDEtYTI2Y2JlYzVjZTNkXkEyXkFqcGdeQXVyNTg0MDM1MzY@._V1_SY500_CR0,0,337,500_AL_.jpg",
       "releaseYear": "2018"
     },
     {
@@ -76,6 +48,69 @@
       "genre": "horror",
       "releaseYear": "2111",
       "id": 11
+    },
+    {
+      "name": "Sleepless In Seatle",
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLNsVRvaFjZb3eEwOy5TG_tUhDfQiams3qYbCegKJbRW8Ggcn3",
+      "genre": "Romance",
+      "releaseYear": "1993",
+      "id": 12
+    },
+    {
+      "name": "Hustle",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxbfSrtzxmFR78b53KOtCQEQsfKDbBKCNyqsrG6azXjkAL_8Lr",
+      "genre": "Sports/Comedy",
+      "releaseYear": "2022",
+      "id": 13
+    },
+    {
+      "name": "Don Juan DeMarco",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8xII0bnkL_tZOtMi0fbNjuj-Iovm4OvZjYuzJNmwkHtOHGWG",
+      "genre": "Romance/Comedy",
+      "releaseYear": "1994",
+      "id": 14
+    },
+    {
+      "name": "Home Team",
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQjHDjW58CH0BURYastPhpDPBN4TXhvFjHgxCo136UiPwmmpu4Q",
+      "genre": "Family/Comedy",
+      "releaseYear": "2022",
+      "id": 15
+    },
+    {
+      "name": "Punch Drunk Love",
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQs8mEJHV4stj3_F6wBE6jdvXEPVKwidRsPfCyOG5m2fSfhoWcX",
+      "genre": "Romance/Comedy",
+      "releaseYear": "2002",
+      "id": 16
+    },
+    {
+      "name": "You've Got Mail",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSfYjbcEfK3nTsgvUkzi1kAWr93zBYOPaGgiRUd5Q5EEtTd36gZ",
+      "genre": "Romance/Comedy",
+      "releaseYear": "1998",
+      "id": 17
+    },
+    {
+      "name": "Carrie",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcRxXfrogWeqaGTcHKhBXotB8t30eF1Hbip-cLb5hddwG-EdP8Ws&psig=AOvVaw1l_TY49oNm6zlD7EW70ShK&ust=1712056669438000&source=images&cd=vfe&opi=89978449&ved=0CAoQjRxqFwoTCIjfop7yoIUDFQAAAAAdAAAAABAE",
+      "genre": "Horror",
+      "releaseYear": "1976",
+      "id": 18
+    },
+    {
+      "name": "Midnight in Paris",
+      "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQIUMwMAFJkK7gDdvJ7KY9QsLGYR3YmbKFXPYCwxeCF9Wu1IDla",
+      "genre": "Romance/Comedy",
+      "releaseYear": "2011",
+      "id": 19
+    },
+    {
+      "name": "Coach Carter",
+      "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRtl8ZlXYO8TWXeII4GLp2hfgCD8BuABz56e3VKWkPZaj8z3B2Q",
+      "genre": "Sport/Drama",
+      "releaseYear": "2005",
+      "id": 20
     }
   ]
 }

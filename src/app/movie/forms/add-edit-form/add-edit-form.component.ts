@@ -1,20 +1,24 @@
-import { Component, inject, Input, OnInit } from "@angular/core";
-import { UntypedFormGroup, UntypedFormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
-import { lastValueFrom } from "rxjs";
-
-import { MovieService } from "../services/movie.service";
-import { Movie } from "../models/movie.model";
+import {Component, inject, Input, OnInit} from '@angular/core';
+import {ReactiveFormsModule, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
+import {lastValueFrom} from "rxjs";
+import {Movie} from "../../models/movie.model";
+import {Router} from "@angular/router";
+import {MovieService} from "../../services/movie.service";
 
 @Component({
-  selector: "app-add-movie",
-  templateUrl: "./add-movie.component.html",
-  styleUrls: ["./add-movie.component.scss"],
+  selector: 'app-add-edit-form',
+  standalone: true,
+    imports: [
+        ReactiveFormsModule
+    ],
+  templateUrl: './add-edit-form.component.html',
+  styleUrl: './add-edit-form.component.scss'
 })
-export class AddMovieComponent implements OnInit {
+export class AddEditFormComponent implements OnInit {
   private router = inject(Router);
+  // private dialogRef = inject(MatDialogRef<AddMovieComponent>);
+  // public modalData: ModalData = inject(MAT_DIALOG_DATA);
   private movieService = inject(MovieService);
-
   @Input() movie?: Movie;
 
   movieForm = new UntypedFormGroup({
@@ -26,8 +30,6 @@ export class AddMovieComponent implements OnInit {
 
   errorMessage: string;
   recentlyAdded: Movie[] = [];
-
-  constructor() {}
 
   ngOnInit() {
     if (this.movie) {
@@ -47,6 +49,7 @@ export class AddMovieComponent implements OnInit {
         console.log(res);
         if (single) {
           this.router.navigate([`/movies/${res.id}`]);
+          // this.dialogRef.close(res);
         } else {
           this.recentlyAdded.push(res);
         }

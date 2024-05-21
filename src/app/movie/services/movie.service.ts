@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { of, Observable } from "rxjs";
-import { delay } from "rxjs/operators";
 import { HttpClient } from "@angular/common/http";
-import { Movie, movies } from "../models/movie.model";
+import { Observable } from "rxjs";
+import { delay } from "rxjs/operators";
+
+import { Movie } from "../models/movie.model";
 
 @Injectable({
   providedIn: "root",
@@ -22,6 +23,10 @@ export class MovieService {
 
   movieFromHttp(id: number) {
     return this.http.get<Movie>(`${this.ROOT_URL}/${id}`);
+  }
+
+  removeMovie(id: number) {
+    return this.http.delete<Movie>(`${this.ROOT_URL}/${id}`);
   }
 
   /*   getMovies() {

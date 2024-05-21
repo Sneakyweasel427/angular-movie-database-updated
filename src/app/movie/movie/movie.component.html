@@ -1,7 +1,16 @@
 @if (movie) {
-  <div>
+  <div class="flex space-between action-buttons">
+    <button mat-flat-button [routerLink]="['/']"> <- Back </button>
+    <button mat-flat-button (click)="onEditMovie()">Edit Info</button>
+    <button mat-flat-button (click)="openConfirmationDialog()"> Remove from Library </button>
+  </div>
+  <div class="movie">
     <img [src]="movie.image">
     <h1>{{movie.id}} - {{movie.name}}</h1>
     <h2>{{movie.genre}} - {{movie.releaseYear}}</h2>
   </div>
 }
+
+<ng-template #editForm>
+    <app-add-movie [movie]="movie"></app-add-movie>
+</ng-template>

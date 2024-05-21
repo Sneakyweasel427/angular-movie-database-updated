@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, inject, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-navbar",
@@ -7,8 +8,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public router: Router) {}
+  public listChanged: EventEmitter<any> = new EventEmitter();
+  public router = inject(Router);
+  private dialog = inject(MatDialog);
 
   ngOnInit() {}
+
 }

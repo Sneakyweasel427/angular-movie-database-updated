@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MovieModule} from "./movie/movie.module";
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
@@ -15,6 +16,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MovieModule,
   ],
   providers: [
     provideAnimationsAsync()

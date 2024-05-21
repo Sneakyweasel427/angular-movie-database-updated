@@ -1,23 +1,44 @@
-<!--if there are movies then show them in the DOM-->
-@if (movies$ | async; as movies) {
-  <ul [@listAnimation]="movies">
-    @for (movie of movies; track movie) {
-      <li>
-        <a [routerLink]="movie.id">
-          <img [src]="movie.image" />
-        </a>
-      </li>
+@if (!loading) {
+  <!-- TODO implement filtering based on year/genre -->
+  <div class="sort-filter-container">
+    <div class="sort">
+      <h4>Sort By</h4>
+      <mat-form-field>
+        <mat-select [(value)]="sortOption">
+          <mat-option value="name">Name</mat-option>
+          <mat-option value="releaseYear">Release Year</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="movie-list">
+    @for (movie of movies | orderBy: sortOption; track movie) {
+      <div class="movie-container">
+        <div class="actions">
+          <mat-icon class="action-icon delete"
+                    (click)="openConfirmationDialog(movie)"
+                    aria-hidden="false"
+                    aria-label="Delete From Library"
+                    fontIcon="delete"
+                    matTooltip="Remove from Library">
+          </mat-icon>
+        </div>
+        <div class="movie">
+          <a [routerLink]="movie.id.toString()">
+            <img [src]="movie.image" alt="{{movie.name}}" />
+          </a>
+          <div class="info">
+            <div class="name">
+              {{movie.name}}
+            </div>
+            <div class="year">
+              {{movie.releaseYear}}
+            </div>
+          </div>
+        </div>
+      </div>
     }
-  </ul>
+  </div>
 } @else {
-  <ul [@listAnimation]="loadingMovies.length">
-    @for (movie of loadingMovies; track movie) {
-      <li
-        [@listAnimation]="loadingMovies.length"
-        >
-        <img src="/assets/movie.png" />
-      </li>
-    }
-  </ul>
+  <app-loading-spinner></app-loading-spinner>
 }
-
